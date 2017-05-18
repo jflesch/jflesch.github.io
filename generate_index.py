@@ -22,6 +22,8 @@ def generate(fd):
     for (dirpath, subdirs, filenames) in os.walk("."):
         if dirpath.startswith("./."):
             continue
+        if "kwain" in dirpath:
+            continue
         if dirpath == ".":
             fd.write("\n<h1>Root</h1>\n".format(dirpath))
         else:
